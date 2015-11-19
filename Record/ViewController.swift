@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func buttonPress(sender: UIButton) {
-        print("button press")
+        let recordTable = RecordManager().getTable()
         self.performSegueWithIdentifier(newRecordIdentifier, sender: self)
     }
 }

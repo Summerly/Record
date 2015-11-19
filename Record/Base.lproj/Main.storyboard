@@ -71,22 +71,73 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wEe-hJ-10l">
+                                <rect key="frame" x="20" y="72" width="50" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eZc-qI-dni">
+                                <rect key="frame" x="20" y="120" width="44" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G1E-Se-QrV">
+                                <rect key="frame" x="78" y="72" width="502" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h7N-1B-Ohx">
+                                <rect key="frame" x="78" y="120" width="502" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xtS-Ti-TmW">
+                                <rect key="frame" x="283" y="198" width="34" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveButtonPressed:" destination="qmc-I5-jBy" eventType="touchUpInside" id="5dL-PY-AVP"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iZK-pR-iEo">
                                 <rect key="frame" x="283" y="285" width="34" height="30"/>
                                 <animations/>
-                                <state key="normal" title="back"/>
+                                <state key="normal" title="Back"/>
                                 <connections>
-                                    <action selector="buttonPressed:" destination="qmc-I5-jBy" eventType="touchUpInside" id="hhW-Wk-Z0t"/>
+                                    <action selector="backbuttonPressed:" destination="qmc-I5-jBy" eventType="touchUpInside" id="6sV-Hd-GYN"/>
                                 </connections>
                             </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="iZK-pR-iEo" firstAttribute="centerX" secondItem="8gl-WW-flZ" secondAttribute="centerX" id="Xav-OP-tvC"/>
-                            <constraint firstItem="iZK-pR-iEo" firstAttribute="centerY" secondItem="8gl-WW-flZ" secondAttribute="centerY" id="y1O-6b-Avz"/>
+                            <constraint firstItem="wEe-hJ-10l" firstAttribute="leading" secondItem="8gl-WW-flZ" secondAttribute="leading" constant="20" id="3OG-66-58y"/>
+                            <constraint firstItem="xtS-Ti-TmW" firstAttribute="centerX" secondItem="8gl-WW-flZ" secondAttribute="centerX" id="58M-2F-n7V"/>
+                            <constraint firstItem="eZc-qI-dni" firstAttribute="leading" secondItem="8gl-WW-flZ" secondAttribute="leading" constant="20" id="79M-5R-pwD"/>
+                            <constraint firstItem="G1E-Se-QrV" firstAttribute="leading" secondItem="wEe-hJ-10l" secondAttribute="trailing" constant="8" id="DZv-hx-R69"/>
+                            <constraint firstItem="G1E-Se-QrV" firstAttribute="leading" secondItem="wEe-hJ-10l" secondAttribute="trailing" constant="8" id="L0d-dJ-beb"/>
+                            <constraint firstAttribute="trailing" secondItem="h7N-1B-Ohx" secondAttribute="trailing" constant="20" id="MbV-oW-1A8"/>
+                            <constraint firstItem="wEe-hJ-10l" firstAttribute="top" secondItem="EK3-HB-bVx" secondAttribute="bottom" constant="8" id="NEn-p9-5Ax"/>
+                            <constraint firstItem="xtS-Ti-TmW" firstAttribute="leading" secondItem="iZK-pR-iEo" secondAttribute="leading" id="Sok-h5-pAo"/>
+                            <constraint firstItem="G1E-Se-QrV" firstAttribute="top" secondItem="EK3-HB-bVx" secondAttribute="bottom" constant="8" id="VDa-3f-0Uc"/>
+                            <constraint firstItem="xtS-Ti-TmW" firstAttribute="top" secondItem="h7N-1B-Ohx" secondAttribute="bottom" constant="48" id="bWQ-Wb-2iH"/>
+                            <constraint firstItem="iZK-pR-iEo" firstAttribute="centerY" secondItem="8gl-WW-flZ" secondAttribute="centerY" id="dc8-OJ-RJQ"/>
+                            <constraint firstAttribute="trailing" secondItem="G1E-Se-QrV" secondAttribute="trailing" constant="20" id="fgH-eZ-Wbq"/>
+                            <constraint firstItem="h7N-1B-Ohx" firstAttribute="top" secondItem="G1E-Se-QrV" secondAttribute="bottom" constant="18" id="fjF-KW-hTe"/>
+                            <constraint firstItem="eZc-qI-dni" firstAttribute="top" secondItem="wEe-hJ-10l" secondAttribute="bottom" constant="27.5" id="kJG-Sy-arc"/>
+                            <constraint firstItem="h7N-1B-Ohx" firstAttribute="leading" secondItem="eZc-qI-dni" secondAttribute="trailing" constant="14" id="yz0-hy-4xL"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="nameTextField" destination="G1E-Se-QrV" id="IoC-t8-uFR"/>
+                        <outlet property="priceTextField" destination="h7N-1B-Ohx" id="fEo-v1-QiA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pyC-06-zTt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

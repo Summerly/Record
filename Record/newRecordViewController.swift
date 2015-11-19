@@ -9,6 +9,9 @@
 import UIKit
 
 class newRecordViewController: UIViewController {
+    
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var priceTextField: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,10 +21,16 @@ class newRecordViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    @IBAction func buttonPressed(sender: UIButton) {
-        print("newRecord button press")
+    @IBAction func saveButtonPressed(sender: UIButton) {
+        let record = Record(name: nameTextField.text!, price: priceTextField.text!)
+        
+        RecordManager().saveRecord(record.name,newPrice: record.price)
+        
+        print(record.description())
+    }
+    
+    @IBAction func backbuttonPressed(sender: UIButton) {
         if let navigationController = self.navigationController {
-            print("popViewController")
             navigationController.popViewControllerAnimated(true)
         }
     }
