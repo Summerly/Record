@@ -17,6 +17,7 @@ class RecordManager {
     let id = Expression<Int64>("id")
     let name = Expression<String>("name")
     let price = Expression<String>("price")
+    let number = Expression<Int>("number")
     let time = Expression<String>("time")
     
     init() {
@@ -32,6 +33,7 @@ class RecordManager {
                     t.column(id, primaryKey: true)
                     t.column(name)
                     t.column(price)
+                    t.column(number)
                     t.column(time)
                     })
             } catch {
@@ -44,14 +46,16 @@ class RecordManager {
         
     func saveRecord(record: Record) {
         let records = self.getTable()
-        let insert = records.insert(name <- record.name, price <- record.price, time <- record.time)
+        let insert = records.insert(name <- record.name, price <- record.price, number <- record.number, time <- record.time)
         try! db.run(insert)
     }
     
     func showRecords() -> [Record] {
         var records: [Record] = []
         for recordRow in db.prepare(self.getTable()) {
-            let record = Record(name: recordRow[self.name], price: recordRow[self.price], time: recordRow[self.time])
+            let record = Record(id: UInt(recordRow[self.id]), name: recordRow[self.name],
+                price: recordRow[self.price], number: recordRow[self.number],
+                time: recordRow[self.time])
             records.append(record)
         }
         return records

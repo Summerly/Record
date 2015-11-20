@@ -23,14 +23,14 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="bottomRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcc-Qt-K0b">
-                        <rect key="frame" x="411" y="162.5" width="33.5" height="77"/>
+                        <rect key="frame" x="411" y="162" width="33.5" height="77"/>
                         <animations/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V6u-yy-F7M">
-                        <rect key="frame" x="445" y="85" width="0.0" height="77.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V6u-yy-F7M">
+                        <rect key="frame" x="386" y="85" width="59" height="77.5"/>
                         <animations/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -64,6 +64,7 @@
             <animations/>
             <connections>
                 <outlet property="nameLabel" destination="h7g-SC-arH" id="6tn-KP-aOk"/>
+                <outlet property="numberLabel" destination="V6u-yy-F7M" id="8lk-ma-cEc"/>
                 <outlet property="priceLabel" destination="84s-rw-ge5" id="M5p-Ha-1pf"/>
                 <outlet property="timeLabel" destination="dcc-Qt-K0b" id="f91-RF-qey"/>
             </connections>

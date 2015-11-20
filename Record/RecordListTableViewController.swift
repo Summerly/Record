@@ -33,6 +33,7 @@ class RecordListTableViewController: UITableViewController {
         
         cell.nameLabel.text = record.name
         cell.priceLabel.text = record.price
+        cell.numberLabel.text = "\(record.number)"
         cell.timeLabel.text = record.time
         
         return cell
@@ -43,6 +44,7 @@ class RecordListTableViewController: UITableViewController {
         let record = records[indexPath.row]
     
         cell.priceLabel.text = record.price
+        cell.numberLabel.text = "\(record.number)"
         cell.timeLabel.text = record.time
         
         let height = cell.contentView.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize).height

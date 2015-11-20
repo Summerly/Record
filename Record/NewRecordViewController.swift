@@ -8,10 +8,11 @@
 
 import UIKit
 
-class newRecordViewController: UIViewController {
+class NewRecordViewController: UIViewController {
     
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var priceTextField: UITextField!
+    @IBOutlet weak var numberTextField: UITextField!
     @IBOutlet weak var timeDatePicker: UIDatePicker!
 
     override func viewDidLoad() {
@@ -24,7 +25,8 @@ class newRecordViewController: UIViewController {
     
     @IBAction func saveButtonPressed(sender: UIButton) {
         let time = timeDatePicker.date
-        let record = Record(name: nameTextField.text!, price: priceTextField.text!, time: "\(time)")
+        let record = Record(name: nameTextField.text!, price: priceTextField.text!,
+            number: Int(numberTextField.text!)!, time: "\(time)")
 
         RecordManager().saveRecord(record)
         

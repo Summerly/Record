@@ -11,6 +11,7 @@ import UIKit
 class RecordInfoTableViewCell: UITableViewCell {
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var priceLabel: UILabel!
+    @IBOutlet var numberLabel: UILabel!
     @IBOutlet var timeLabel: UILabel!
     
     override func awakeFromNib() {
