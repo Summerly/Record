@@ -41,10 +41,19 @@ class RecordManager {
     }
     
     func saveRecord(newName: String, newPrice: String) {
-        var records = self.getTable()
+        let records = self.getTable()
         
         let insert = records.insert(name <- newName, price <- newPrice)
         
         try! db.run(insert)
+    }
+    
+    func showRecords() -> [Record] {
+        var records: [Record] = []
+        for recordRow in db.prepare(self.getTable()) {
+            let record = Record(name: recordRow[self.name], price: recordRow[self.price])
+            records.append(record)
+        }
+        return records
     }
 }

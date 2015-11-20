@@ -26,10 +26,6 @@ class newRecordViewController: UIViewController {
         
         RecordManager().saveRecord(record.name,newPrice: record.price)
         
-        print(record.description())
-    }
-    
-    @IBAction func backbuttonPressed(sender: UIButton) {
         if let navigationController = self.navigationController {
             navigationController.popViewControllerAnimated(true)
         }

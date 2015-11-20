@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var createButton: UIButton!
     
     let newRecordIdentifier: String = "newRecord"
+    let recordListRecordIdentifier: String = "recordList"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,8 +23,11 @@ class ViewController: UIViewController {
     }
 
     @IBAction func buttonPress(sender: UIButton) {
-        let recordTable = RecordManager().getTable()
+        _ = RecordManager().getTable()
         self.performSegueWithIdentifier(newRecordIdentifier, sender: self)
+    }
+    @IBAction func recordListButtonPressed(sender: UIButton) {
+        self.performSegueWithIdentifier(recordListRecordIdentifier, sender: self)
     }
 }
 

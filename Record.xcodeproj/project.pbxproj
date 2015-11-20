@@ -15,6 +15,7 @@
 		292802151BFD6CA2006EF15A /* RecordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292802141BFD6CA2006EF15A /* RecordTests.swift */; };
 		292802201BFD6CA2006EF15A /* RecordUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2928021F1BFD6CA2006EF15A /* RecordUITests.swift */; };
 		2941F7011BFDCE610083E55E /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2941F7001BFDCE610083E55E /* Record.swift */; };
+		29453B901BFEB3CD00EBE75D /* RecordListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29453B8F1BFEB3CD00EBE75D /* RecordListTableViewController.swift */; };
 		29A77EFE1BFD8EC9008AA635 /* newRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A77EFD1BFD8EC9008AA635 /* newRecordViewController.swift */; };
 		29A77F021BFDCA9C008AA635 /* RecordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A77F011BFDCA9C008AA635 /* RecordManager.swift */; };
 		D3BB1D6C6B4EBE58D44DCD47 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 084DF901C9CBEF82EC0DEE87 /* Pods.framework */; };
@@ -53,6 +54,7 @@
 		2928021F1BFD6CA2006EF15A /* RecordUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordUITests.swift; sourceTree = "<group>"; };
 		292802211BFD6CA2006EF15A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2941F7001BFDCE610083E55E /* Record.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
+		29453B8F1BFEB3CD00EBE75D /* RecordListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordListTableViewController.swift; sourceTree = "<group>"; };
 		29A77EFD1BFD8EC9008AA635 /* newRecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newRecordViewController.swift; sourceTree = "<group>"; };
 		29A77F011BFDCA9C008AA635 /* RecordManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordManager.swift; sourceTree = "<group>"; };
 		3054B3506CF0B26055F803D0 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				29A77EFD1BFD8EC9008AA635 /* newRecordViewController.swift */,
 				29A77F011BFDCA9C008AA635 /* RecordManager.swift */,
 				2941F7001BFDCE610083E55E /* Record.swift */,
+				29453B8F1BFEB3CD00EBE75D /* RecordListTableViewController.swift */,
 			);
 			path = Record;
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29453B901BFEB3CD00EBE75D /* RecordListTableViewController.swift in Sources */,
 				292802021BFD6CA2006EF15A /* ViewController.swift in Sources */,
 				292802001BFD6CA2006EF15A /* AppDelegate.swift in Sources */,
 				2941F7011BFDCE610083E55E /* Record.swift in Sources */,
