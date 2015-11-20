@@ -12,18 +12,24 @@ class Record {
     var name: String
     var price: String
     var number: Int
+    var time: String
     
-    init(name: String, price: String, number: Int) {
+    init(name: String, price: String, number: Int, time: String) {
         self.name = name
         self.price = price
         self.number = number
+        self.time = time
     }
     
     convenience init(name: String, price: String) {
-        self.init(name: name, price: price, number: 1)
+        self.init(name: name, price: price, number: 1, time: "\(NSData())")
+    }
+    
+    convenience init(name: String, price: String, time: String) {
+        self.init(name: name, price: price, number: 1, time: time)
     }
     
     func description() -> String {
-        return "name:\(self.name) price:\(self.price) number:\(self.number)"
+        return "name:\(self.name) price:\(self.price) number:\(self.number) time:\(self.time)"
     }
 }

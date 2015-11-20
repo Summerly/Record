@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -57,6 +58,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="300" y="339"/>
         </scene>
         <!--Record List Table View Controller-->
         <scene sceneID="WH9-17-Nir">
@@ -105,7 +107,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3mk-Hu-Gop" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1049" y="324"/>
+            <point key="canvasLocation" x="999" y="339"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="XOS-2M-vLe">
@@ -162,8 +164,29 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OmV-8R-QDU">
+                                <rect key="frame" x="19" y="166" width="43" height="20.5"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="eBl-VJ-mg9">
+                                <rect key="frame" x="78" y="158" width="502" height="20.5"/>
+                                <animations/>
+                                <date key="date" timeIntervalSinceReferenceDate="532838383.99509603">
+                                    <!--2017-11-20 02:39:43 +0000-->
+                                </date>
+                                <date key="minimumDate" timeIntervalSinceReferenceDate="-978267600">
+                                    <!--1970-01-01 11:00:00 +0000-->
+                                </date>
+                                <date key="maximumDate" timeIntervalSinceReferenceDate="1167562800">
+                                    <!--2037-12-31 11:00:00 +0000-->
+                                </date>
+                                <locale key="locale" localeIdentifier="zh_CN"/>
+                            </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iZK-pR-iEo">
-                                <rect key="frame" x="283" y="285" width="34" height="30"/>
+                                <rect key="frame" x="20" y="550" width="560" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Save"/>
                                 <connections>
@@ -177,26 +200,34 @@
                             <constraint firstItem="wEe-hJ-10l" firstAttribute="leading" secondItem="8gl-WW-flZ" secondAttribute="leading" constant="20" id="3OG-66-58y"/>
                             <constraint firstItem="eZc-qI-dni" firstAttribute="leading" secondItem="8gl-WW-flZ" secondAttribute="leading" constant="20" id="79M-5R-pwD"/>
                             <constraint firstItem="G1E-Se-QrV" firstAttribute="leading" secondItem="wEe-hJ-10l" secondAttribute="trailing" constant="8" id="DZv-hx-R69"/>
+                            <constraint firstItem="eBl-VJ-mg9" firstAttribute="leading" secondItem="OmV-8R-QDU" secondAttribute="trailing" constant="16" id="IEF-9j-q0m"/>
+                            <constraint firstItem="OmV-8R-QDU" firstAttribute="top" secondItem="eZc-qI-dni" secondAttribute="bottom" constant="26.5" id="JL8-9L-4JL"/>
                             <constraint firstItem="G1E-Se-QrV" firstAttribute="leading" secondItem="wEe-hJ-10l" secondAttribute="trailing" constant="8" id="L0d-dJ-beb"/>
                             <constraint firstAttribute="trailing" secondItem="h7N-1B-Ohx" secondAttribute="trailing" constant="20" id="MbV-oW-1A8"/>
                             <constraint firstItem="wEe-hJ-10l" firstAttribute="top" secondItem="EK3-HB-bVx" secondAttribute="bottom" constant="8" id="NEn-p9-5Ax"/>
-                            <constraint firstItem="iZK-pR-iEo" firstAttribute="centerY" secondItem="8gl-WW-flZ" secondAttribute="centerY" id="S4m-wE-Izy"/>
+                            <constraint firstItem="eBl-VJ-mg9" firstAttribute="leading" secondItem="OmV-8R-QDU" secondAttribute="trailing" constant="16" id="P2f-g4-x0b"/>
+                            <constraint firstItem="iZK-pR-iEo" firstAttribute="leading" secondItem="8gl-WW-flZ" secondAttribute="leadingMargin" id="PyO-Bb-1UW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="iZK-pR-iEo" secondAttribute="trailing" id="TFW-F1-m0D"/>
                             <constraint firstItem="G1E-Se-QrV" firstAttribute="top" secondItem="EK3-HB-bVx" secondAttribute="bottom" constant="8" id="VDa-3f-0Uc"/>
-                            <constraint firstItem="iZK-pR-iEo" firstAttribute="centerX" secondItem="8gl-WW-flZ" secondAttribute="centerX" id="fAn-jb-mM9"/>
                             <constraint firstAttribute="trailing" secondItem="G1E-Se-QrV" secondAttribute="trailing" constant="20" id="fgH-eZ-Wbq"/>
                             <constraint firstItem="h7N-1B-Ohx" firstAttribute="top" secondItem="G1E-Se-QrV" secondAttribute="bottom" constant="18" id="fjF-KW-hTe"/>
+                            <constraint firstItem="4Hs-bd-YDe" firstAttribute="top" secondItem="iZK-pR-iEo" secondAttribute="bottom" constant="20" id="gH5-YZ-Nov"/>
                             <constraint firstItem="eZc-qI-dni" firstAttribute="top" secondItem="wEe-hJ-10l" secondAttribute="bottom" constant="26.5" id="kJG-Sy-arc"/>
+                            <constraint firstAttribute="trailing" secondItem="eBl-VJ-mg9" secondAttribute="trailing" constant="20" id="lV6-RM-fLt"/>
+                            <constraint firstItem="OmV-8R-QDU" firstAttribute="leading" secondItem="8gl-WW-flZ" secondAttribute="leading" constant="19" id="mzk-2p-ath"/>
+                            <constraint firstItem="eBl-VJ-mg9" firstAttribute="top" secondItem="h7N-1B-Ohx" secondAttribute="bottom" constant="16" id="w50-JF-8pY"/>
                             <constraint firstItem="h7N-1B-Ohx" firstAttribute="leading" secondItem="eZc-qI-dni" secondAttribute="trailing" constant="14" id="yz0-hy-4xL"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="nameTextField" destination="G1E-Se-QrV" id="IoC-t8-uFR"/>
                         <outlet property="priceTextField" destination="h7N-1B-Ohx" id="fEo-v1-QiA"/>
+                        <outlet property="timeDatePicker" destination="eBl-VJ-mg9" id="It8-UI-woL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pyC-06-zTt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="41" y="1134"/>
+            <point key="canvasLocation" x="300" y="1125"/>
         </scene>
     </scenes>
 </document>

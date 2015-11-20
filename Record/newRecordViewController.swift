@@ -12,6 +12,7 @@ class newRecordViewController: UIViewController {
     
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var priceTextField: UITextField!
+    @IBOutlet weak var timeDatePicker: UIDatePicker!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,9 +23,10 @@ class newRecordViewController: UIViewController {
     }
     
     @IBAction func saveButtonPressed(sender: UIButton) {
-        let record = Record(name: nameTextField.text!, price: priceTextField.text!)
-        
-        RecordManager().saveRecord(record.name,newPrice: record.price)
+        let time = timeDatePicker.date
+        let record = Record(name: nameTextField.text!, price: priceTextField.text!, time: "\(time)")
+
+        RecordManager().saveRecord(record)
         
         if let navigationController = self.navigationController {
             navigationController.popViewControllerAnimated(true)

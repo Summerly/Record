@@ -17,6 +17,7 @@ class RecordManager {
     let id = Expression<Int64>("id")
     let name = Expression<String>("name")
     let price = Expression<String>("price")
+    let time = Expression<String>("time")
     
     init() {
         db = try! Connection("\(path)/db.sqlite3")
@@ -25,12 +26,13 @@ class RecordManager {
     func getTable() -> SchemaType {
         let records = Table("records");
         
-        if records.exists.template == "false" {
+        if !self.isTableExist("records") {
             do {
                 try db.run(records.create { t in
                     t.column(id, primaryKey: true)
                     t.column(name)
                     t.column(price)
+                    t.column(time)
                     })
             } catch {
                 print("not create table records")
@@ -39,21 +41,23 @@ class RecordManager {
         
         return records
     }
-    
-    func saveRecord(newName: String, newPrice: String) {
+        
+    func saveRecord(record: Record) {
         let records = self.getTable()
-        
-        let insert = records.insert(name <- newName, price <- newPrice)
-        
+        let insert = records.insert(name <- record.name, price <- record.price, time <- record.time)
         try! db.run(insert)
     }
     
     func showRecords() -> [Record] {
         var records: [Record] = []
         for recordRow in db.prepare(self.getTable()) {
-            let record = Record(name: recordRow[self.name], price: recordRow[self.price])
+            let record = Record(name: recordRow[self.name], price: recordRow[self.price], time: recordRow[self.time])
             records.append(record)
         }
         return records
+    }
+    
+    func isTableExist(tableName: String) -> Bool {
+        return db.scalar("select exists(select name from sqlite_master where name = ?)", tableName) as! Int64 > 0
     }
 }
