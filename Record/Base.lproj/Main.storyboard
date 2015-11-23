@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="mXs-A7-TEC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yBr-Th-pLQ">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
@@ -19,43 +19,32 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qrO-ve-jXR">
-                                <rect key="frame" x="234" y="64" width="133" height="30"/>
+                                <rect key="frame" x="234" y="285" width="133" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Create New Record"/>
                                 <connections>
                                     <action selector="buttonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="52o-rt-2a6"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zgA-5P-x6y">
-                                <rect key="frame" x="261" y="104" width="78" height="30"/>
-                                <animations/>
-                                <state key="normal" title="Record List"/>
-                                <connections>
-                                    <action selector="recordListButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="o51-39-MB8"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="qrO-ve-jXR" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="42v-qT-FBQ"/>
-                            <constraint firstItem="zgA-5P-x6y" firstAttribute="top" secondItem="qrO-ve-jXR" secondAttribute="bottom" constant="10" id="47W-gj-AC3"/>
-                            <constraint firstItem="zgA-5P-x6y" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="T9W-lS-QEl"/>
-                            <constraint firstItem="qrO-ve-jXR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="odF-Jc-AJN"/>
+                            <constraint firstItem="qrO-ve-jXR" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Jvr-CZ-pJm"/>
+                            <constraint firstItem="qrO-ve-jXR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gA6-96-wfO"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="cS3-7U-34a"/>
                     <connections>
                         <outlet property="createButton" destination="qrO-ve-jXR" id="lx0-ZP-NXA"/>
                         <segue destination="qmc-I5-jBy" kind="show" identifier="newRecord" id="7jy-mk-9nu"/>
-                        <segue destination="ZnE-Oj-vrz" kind="show" identifier="recordList" id="I6D-lG-HJU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="300" y="339"/>
         </scene>
-        <!--Record List Table View Controller-->
+        <!--RecordList-->
         <scene sceneID="WH9-17-Nir">
             <objects>
                 <tableViewController id="ZnE-Oj-vrz" customClass="RecordListTableViewController" customModule="Record" customModuleProvider="target" sceneMemberID="viewController">
@@ -69,15 +58,17 @@
                             <outlet property="delegate" destination="ZnE-Oj-vrz" id="XkF-J2-yOz"/>
                         </connections>
                     </tableView>
+                    <tabBarItem key="tabBarItem" title="RecordList" id="AR2-Xq-duq"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3mk-Hu-Gop" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="999" y="339"/>
+            <point key="canvasLocation" x="-1532" y="1165"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--NewRecord-->
         <scene sceneID="XOS-2M-vLe">
             <objects>
                 <navigationController id="mXs-A7-TEC" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="NewRecord" id="iFk-JO-Bij"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="4qP-un-Jrv">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -89,7 +80,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PfN-EV-NfJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-500" y="267"/>
+            <point key="canvasLocation" x="-524" y="339"/>
         </scene>
         <!--New Record View Controller-->
         <scene sceneID="bTb-5H-bVb">
@@ -127,10 +118,10 @@
                                 <rect key="frame" x="20" y="207.5" width="43" height="20.5"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="eBl-VJ-mg9">
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="eBl-VJ-mg9">
                                 <rect key="frame" x="73" y="213" width="507" height="216"/>
                                 <animations/>
                                 <date key="date" timeIntervalSinceReferenceDate="532838383.99509603">
@@ -212,6 +203,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pyC-06-zTt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="300" y="1125"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="waR-e4-ThB">
+            <objects>
+                <tabBarController id="yBr-Th-pLQ" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="OkG-0G-R7X">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="mXs-A7-TEC" kind="relationship" relationship="viewControllers" id="ugt-uu-r2x"/>
+                        <segue destination="ZnE-Oj-vrz" kind="relationship" relationship="viewControllers" id="ZlX-Vw-oS9"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oza-EZ-IIi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1532" y="339"/>
         </scene>
     </scenes>
 </document>

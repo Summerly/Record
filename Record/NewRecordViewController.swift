@@ -25,13 +25,35 @@ class NewRecordViewController: UIViewController {
     
     @IBAction func saveButtonPressed(sender: UIButton) {
         let time = timeDatePicker.date
-        let record = Record(name: nameTextField.text!, price: priceTextField.text!,
-            number: Int(numberTextField.text!)!, time: "\(time)")
-
-        RecordManager().saveRecord(record)
         
-        if let navigationController = self.navigationController {
-            navigationController.popViewControllerAnimated(true)
+        if nameTextField.text!.isEmpty {
+            self.emptyWarning("Name should not be empty")
         }
+        
+        if priceTextField.text!.isEmpty {
+            self.emptyWarning("Price should not be empty")
+        }
+        
+        if numberTextField.text!.isEmpty {
+            self.emptyWarning("Number should not be empty")
+        }
+        
+        if !nameTextField.text!.isEmpty && !priceTextField.text!.isEmpty && !numberTextField.text!.isEmpty {
+            let record = Record(name: nameTextField.text!, price: priceTextField.text!,
+                number: Int(numberTextField.text!)!, time: "\(time)")
+            
+            RecordManager().saveRecord(record)
+            
+            if let navigationController = self.navigationController {
+                navigationController.popViewControllerAnimated(true)
+            }
+        }
+    }
+    
+    private func emptyWarning(message: String) {
+        let alert = UIAlertController(title: "", message: message, preferredStyle: .Alert)
+        let action = UIAlertAction(title: "I know", style: .Default, handler: nil)
+        alert.addAction(action)
+        presentViewController(alert, animated: true, completion: nil)
     }
 }

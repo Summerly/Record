@@ -26,8 +26,5 @@ class ViewController: UIViewController {
         _ = RecordManager().getTable()
         self.performSegueWithIdentifier(newRecordIdentifier, sender: self)
     }
-    @IBAction func recordListButtonPressed(sender: UIButton) {
-        self.performSegueWithIdentifier(recordListRecordIdentifier, sender: self)
-    }
 }
 

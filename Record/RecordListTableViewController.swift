@@ -22,6 +22,11 @@ class RecordListTableViewController: UITableViewController {
         prototypeCell = tableView.dequeueReusableCellWithIdentifier(recordListCellIdentifier) as! RecordInfoTableViewCell
     }
     
+    override func viewWillAppear(animated: Bool) {
+        records = RecordManager().showRecords()
+        tableView.reloadData()
+    }
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return records.count
     }
@@ -58,9 +63,6 @@ class RecordListTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         let record = records[indexPath.row]
-        
-        dump(indexPath)
-        dump(indexPath.row)
         
         if editingStyle == UITableViewCellEditingStyle.Delete {
             RecordManager().removeRecord(record)
