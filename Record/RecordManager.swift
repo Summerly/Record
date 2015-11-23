@@ -61,6 +61,11 @@ class RecordManager {
         return records
     }
     
+    func removeRecord(record: Record) {
+        let willRemovedItem = self.getTable().filter(id == Int64(record.id))
+        try! db.run(willRemovedItem.delete())
+    }
+    
     func isTableExist(tableName: String) -> Bool {
         return db.scalar("select exists(select name from sqlite_master where name = ?)", tableName) as! Int64 > 0
     }

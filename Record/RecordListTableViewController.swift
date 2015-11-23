@@ -51,4 +51,21 @@ class RecordListTableViewController: UITableViewController {
         
         return height
     }
+    
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return records.count > 0
+    }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        let record = records[indexPath.row]
+        
+        dump(indexPath)
+        dump(indexPath.row)
+        
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            RecordManager().removeRecord(record)
+            records = RecordManager().showRecords()
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+        }
+    }
 }
